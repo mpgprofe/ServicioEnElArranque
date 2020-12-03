@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
         buttonArracar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /*
+                BroadcastReceiver broadcastReceiver = new MyReceiver();
+                IntentFilter intentFilter = new IntentFilter(Intent.ACTION_BOOT_COMPLETED);
+                getApplicationContext().registerReceiver(broadcastReceiver,intentFilter);
+
+                 */
                 MiServicioIntenso.encolarTrabajo(getApplicationContext(), new Intent());
             }
         });
